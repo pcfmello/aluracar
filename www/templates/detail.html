@@ -1,0 +1,29 @@
+<ion-view>
+	
+	<ion-nav-title>Car Detail</ion-nav-title>
+	
+	<ion-content>
+
+		<div class="card">
+			<div class="item item-divider">Details</div>
+			<div class="item item-text-wrap">
+				Name: {{ car.nome }}<br>
+				Price: {{ car.preco | currency }}
+				<ion-list>
+					<ion-item ng-repeat="item in accessoryList">
+					    <ion-toggle disabled checked="false" ng-model="isChecked" ng-change="insertAcessory(isChecked, item)">
+					    	{{item.nome}} | {{ item.preco }}
+					    </ion-toggle>
+					</ion-item>
+				</ion-list>
+			</div>
+			<div class="item item-divider">Total: {{ subtotal | currency }}</div>
+		</div>
+
+		<a href="#/cart/{{ itemList }}" class="button button-block button-positive">
+			Add to cart
+		</a>
+	
+	</ion-content>
+
+</ion-view>

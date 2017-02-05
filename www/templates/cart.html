@@ -1,0 +1,29 @@
+<ion-view>
+    <ion-nav-title>Cart</ion-nav-title>
+    <ion-content>
+        <div class="card">
+            <div class="item item-divider">Product List</div>
+            <div class="item item-text-wrap">
+                <ol>
+                    <li ng-repeat="item in itemList">
+                        <div class="row">
+                            <div class="col col-50">{{ item.nome }}</div>
+                            <div class="text-right col col-50">{{ item.preco | currency }}</div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="item item-divider">
+                <div class="row">
+                    <div class="col col-50">Total order:</div>
+                    <div class="text-right col col-50">{{ totalOrder | currency }}</div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#/checkout/{{ totalOrder }}" class="button button-block button-positive">
+            Checkout
+        </a>
+
+    </ion-content>
+</ion-view>
